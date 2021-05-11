@@ -21,6 +21,10 @@ export default class App extends Component {
       name,
       number,
     };
+    if (this.state.contacts.find(contact => contact.name === name)) {
+      alert("This contact is already on the list");
+      return;
+    }
     this.setState(({ contacts }) => ({
       contacts: [contact, ...contacts],
     }));
